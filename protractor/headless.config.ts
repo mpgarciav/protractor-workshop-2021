@@ -13,6 +13,7 @@ export const config: Config = {
     }
   },
   onPrepare: () => {
+    browser.manage().timeouts().implicitlyWait(3000);
     browser.ignoreSynchronization = true;
     reporter();
   },
