@@ -9,5 +9,5 @@ export const config: Config = {
   onPrepare: () => {
     browser.ignoreSynchronization = true;
     reporter();
-  }
+  },
 };
