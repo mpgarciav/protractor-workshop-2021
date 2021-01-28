@@ -18,9 +18,16 @@ export const config: Config = {
       merge: true
     };
 
-jasmine.getEnv().addReporter(AwesomeReport.getReport(config));
+    jasmine.getEnv().addReporter(AwesomeReport.getReport(config));
   },
   jasmineNodeOpts: {
     defaultTimeoutInterval: 120000
+  },
+  capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=800,600'],
+      prefs: { credentials_enable_service: false }
+    }
   },
 };
