@@ -10,6 +10,15 @@ export const config: Config = {
     browser.manage().timeouts().implicitlyWait(0)
     browser.ignoreSynchronization = true;
     reporter();
+
+    const { AwesomeReport } = require('jasmine-awesome-report');
+    const config = {
+      fullPath: 'reports',
+      fileName: 'awesome',
+      merge: true
+    };
+
+jasmine.getEnv().addReporter(AwesomeReport.getReport(config));
   },
   jasmineNodeOpts: {
     defaultTimeoutInterval: 120000
